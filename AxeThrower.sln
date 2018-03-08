@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxeThrower", "AxeThrower.csproj", "{76605A1B-643C-D724-2FDE-2E5B1AB7A168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxeThrower.Editor", "AxeThrower.Editor.csproj", "{C0C0AAD7-E5E7-53ED-45A0-93BF0B1856F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76605A1B-643C-D724-2FDE-2E5B1AB7A168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76605A1B-643C-D724-2FDE-2E5B1AB7A168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76605A1B-643C-D724-2FDE-2E5B1AB7A168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76605A1B-643C-D724-2FDE-2E5B1AB7A168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C0AAD7-E5E7-53ED-45A0-93BF0B1856F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C0AAD7-E5E7-53ED-45A0-93BF0B1856F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C0AAD7-E5E7-53ED-45A0-93BF0B1856F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C0AAD7-E5E7-53ED-45A0-93BF0B1856F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
