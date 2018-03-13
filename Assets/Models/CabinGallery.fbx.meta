@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 8c33a75fdc9092146b5429640d8dc100
+timeCreated: 1520867160
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube
+    100004: Cube.000
+    100006: Cube.001
+    100008: Cube.004
+    100010: Cube.014
+    100012: Cube.017
+    100014: Cube.018
+    100016: Cube.019
+    100018: Cube.020
+    100020: Cube.021
+    100022: Cube.022
+    100024: Cube.023
+    100026: Cube.002
+    100028: Cube.003
+    100030: Cube.005
+    100032: Cube.006
+    100034: Cube.007
+    100036: Cube.008
+    100038: Cube.009
+    100040: Camera
+    100042: Lamp
+    100044: Desk
+    100046: Walls
+    400000: //RootNode
+    400002: Cube
+    400004: Cube.000
+    400006: Cube.001
+    400008: Cube.004
+    400010: Cube.014
+    400012: Cube.017
+    400014: Cube.018
+    400016: Cube.019
+    400018: Cube.020
+    400020: Cube.021
+    400022: Cube.022
+    400024: Cube.023
+    400026: Cube.002
+    400028: Cube.003
+    400030: Cube.005
+    400032: Cube.006
+    400034: Cube.007
+    400036: Cube.008
+    400038: Cube.009
+    400040: Camera
+    400042: Lamp
+    400044: Desk
+    400046: Walls
+    2100000: No Name
+    2100002: BeamMat
+    2100004: WallMAT
+    2100006: CeilingMat
+    2300000: Cube
+    2300002: Cube.000
+    2300004: Cube.001
+    2300006: Cube.004
+    2300008: Cube.014
+    2300010: Cube.017
+    2300012: Cube.018
+    2300014: Cube.019
+    2300016: Cube.020
+    2300018: Cube.021
+    2300020: Cube.022
+    2300022: Cube.023
+    2300024: Cube.002
+    2300026: Cube.003
+    2300028: Cube.005
+    2300030: Cube.006
+    2300032: Cube.007
+    2300034: Cube.008
+    2300036: Cube.009
+    2300038: Desk
+    2300040: Walls
+    3300000: Cube
+    3300002: Cube.000
+    3300004: Cube.001
+    3300006: Cube.004
+    3300008: Cube.014
+    3300010: Cube.017
+    3300012: Cube.018
+    3300014: Cube.019
+    3300016: Cube.020
+    3300018: Cube.021
+    3300020: Cube.022
+    3300022: Cube.023
+    3300024: Cube.002
+    3300026: Cube.003
+    3300028: Cube.005
+    3300030: Cube.006
+    3300032: Cube.007
+    3300034: Cube.008
+    3300036: Cube.009
+    3300038: Desk
+    3300040: Walls
+    4300000: Cube
+    4300002: Cube.000
+    4300004: Cube.023
+    4300006: Cube.022
+    4300008: Cube.021
+    4300010: Cube.020
+    4300012: Cube.019
+    4300014: Cube.018
+    4300016: Cube.017
+    4300018: Cube.014
+    4300020: Cube.004
+    4300022: Cube.001
+    4300024: Cube.006
+    4300026: Cube.005
+    4300028: Cube.003
+    4300030: Cube.002
+    4300032: Cube.009
+    4300034: Cube.008
+    4300036: Cube.007
+    4300038: Desk
+    4300040: Walls
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BeamMat
+    second: {fileID: 2100000, guid: 50bd03ef4e8d66d44af26e8e42c3c4d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CeilingMat
+    second: {fileID: 2100000, guid: fafbfe9bb4bea674f89da72d281608ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 50bd03ef4e8d66d44af26e8e42c3c4d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallMAT
+    second: {fileID: 2100000, guid: f4b69505671a66745b47bf3bff489197, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.3
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

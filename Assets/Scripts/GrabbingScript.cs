@@ -28,7 +28,7 @@ public class GrabbingScript : MonoBehaviour {
     {
         if (device.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
         {
-            GrabItem(other.gameObject);
+            GrabAxe(other.gameObject);
         }
         if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
         {
@@ -51,6 +51,32 @@ public class GrabbingScript : MonoBehaviour {
         }
         heldRB.isKinematic = true;
         heldRB.useGravity = false;
+        model.SetActive(false);
+    }
+
+    private GhostAxeScript ghost;
+
+    private void GrabAxe(GameObject grabedAxe)
+    {
+        ghost = grabedAxe.GetComponent<GhostAxeScript>();
+        if (ghost == null)
+        {
+            heldObject = grabedAxe;
+            distance = Vector3.Distance(transform.position, heldObject.transform.position);
+        }
+        else
+        {
+            heldObject = ghost.GrabAxe();
+            distance = Vector3.Distance(transform.position, ghost.transform.position);
+        }
+        heldObject.transform.SetParent(transform);
+        heldRB = heldObject.GetComponent<Rigidbody>();
+        axe = heldObject.GetComponent<AxePhysicsScript>();
+        heldObject.transform.position = transform.position + transform.forward * distance;
+        heldObject.transform.localEulerAngles = Vector3.zero;
+        heldRB.isKinematic = true;
+        heldRB.useGravity = false;
+        heldRB.detectCollisions = true;
         model.SetActive(false);
     }
 
