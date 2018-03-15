@@ -9,17 +9,29 @@ public class TimeKeeperScript : MonoBehaviour {
 
     public float secondsToPass;
 
+    public AudioClip countdown;
+    public AudioClip endgame;
+
+    public int startCountdown;
+    private AudioSource source;
+
     private bool timing;
     private float startTime;
     private float timeLapsed;
+    private float lastTime;
 
     private float totalTime;
     private int minutes;
     private int seconds;
     private int mSeconds;
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (!timing) return;
 		if(secondsToPass == 0)
         {
@@ -27,20 +39,35 @@ public class TimeKeeperScript : MonoBehaviour {
         }
         else
         {
-            timeLapsed = Mathf.Max(startTime + secondsToPass - Time.time, 0f);
+            lastTime = timeLapsed;
+            timeLapsed = startTime + secondsToPass - Time.time;
+            if(timeLapsed < startCountdown && timeLapsed > 0f)
+            {
+                if(timeLapsed % 1f > lastTime % 1f)
+                {
+                    if (source.clip != countdown) source.clip = countdown;
+                    source.Play();
+                }
+            }
         }
-        timeText.text = GetTime(timeLapsed);
+        timeText.text = GetTime(Mathf.Max(timeLapsed, 0f));
     }
 
     public void StartTiming()
     {
         timing = true;
         startTime = Time.time;
+        lastTime = startTime;
+        source.clip = endgame;
+        source.Play();
+        timeLapsed = startTime;
     }
 
     public void StopTimer()
     {
         timing = false;
+        source.clip = endgame;
+        source.Play();
     }
 
     public float GetTime()

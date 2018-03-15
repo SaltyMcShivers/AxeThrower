@@ -330,6 +330,8 @@
     <Compile Include="Assets\Handpainted Forest Environment Free Sample\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Handpainted Forest Environment Free Sample\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Handpainted Forest Environment Free Sample\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\Laterns and candles\scripts\CameraFacing.cs" />
+    <Compile Include="Assets\Laterns and candles\scripts\ExtendedFlycam.cs" />
     <Compile Include="Assets\Scripts\AxeScripts\AxePenetrationScript.cs" />
     <Compile Include="Assets\Scripts\AxeScripts\AxePhysicsScript.cs" />
     <Compile Include="Assets\Scripts\AxeScripts\AxeResetScript.cs" />
@@ -337,6 +339,7 @@
     <Compile Include="Assets\Scripts\AxeScripts\AxeStickingScript.cs" />
     <Compile Include="Assets\Scripts\AxeScripts\BladeScript.cs" />
     <Compile Include="Assets\Scripts\AxeScripts\GhostAxeScript.cs" />
+    <Compile Include="Assets\Scripts\GameLogic\BonusDisplay.cs" />
     <Compile Include="Assets\Scripts\GameLogic\GameManagerScript.cs" />
     <Compile Include="Assets\Scripts\GameLogic\HangingTargetGame.cs" />
     <Compile Include="Assets\Scripts\GameLogic\OneThrowGame.cs" />
@@ -351,6 +354,7 @@
     <Compile Include="Assets\Scripts\TargetScripts\SpinningTargetScript.cs" />
     <Compile Include="Assets\Scripts\TargetScripts\SpinningTargetsManager.cs" />
     <Compile Include="Assets\Scripts\TargetScripts\TargetPointsScript.cs" />
+    <Compile Include="Assets\Scripts\TargetScripts\TargetRingScript.cs" />
     <Compile Include="Assets\Scripts\TargetScripts\TargetScoringScript.cs" />
     <Compile Include="Assets\Scripts\TeleLocationScript.cs" />
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />
@@ -461,6 +465,7 @@
     <None Include="Assets\Handpainted Forest Environment Free Sample\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Handpainted Forest Environment Free Sample\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Handpainted Forest Environment Free Sample\Terrain Trees\ReadMe.txt" />
+    <None Include="Assets\Laterns and candles\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />

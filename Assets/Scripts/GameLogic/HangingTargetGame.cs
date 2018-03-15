@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class HangingTargetGame : GameManagerScript
 {
-    public Text scoreText;
-    public int maxTargets;
+    public AudioSource targetAudio;
+
+    public float blinkingTime = 1.5f;
+
+    public List<TargetRingScript> rings;
 
     private List<int> targetsHit;
 
@@ -19,10 +22,9 @@ public class HangingTargetGame : GameManagerScript
     public override void ResetGame()
     {
         targetsHit.Clear();
-        scoreText.text = "";
-        for (int i = 0; i < maxTargets; i++)
+        foreach(TargetRingScript ring in rings)
         {
-            scoreText.text += (i + 1).ToString();
+            ring.ForceOff();
         }
         base.ResetGame();
     }
@@ -35,12 +37,14 @@ public class HangingTargetGame : GameManagerScript
 
     public override void ScorePoints(GameObject axe, int points, TargetScoringScript target)
     {
-        Debug.Log("Scored");
         if (points == 0) return;
+        rings[points - 1].StartBlinking();
         if (targetsHit.Contains(points)) return;
         targetsHit.Add(points);
-        scoreText.text = scoreText.text.Replace(points.ToString(), "");
-        if (targetsHit.Count == maxTargets)
+        targetAudio.Play();
+
+
+        if (targetsHit.Count == rings.Count)
         {
             EndGame();
         }

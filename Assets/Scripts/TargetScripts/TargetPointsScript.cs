@@ -15,7 +15,6 @@ public class TargetPointsScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(gameObject.name + " enter " + axes.Count.ToString());
         if (!axes.Contains(other.transform.parent.gameObject))
         {
             axes.Add(other.transform.parent.gameObject);
@@ -24,7 +23,6 @@ public class TargetPointsScript : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(gameObject.name + " exit " + axes.Count.ToString());
         axes.Remove(other.transform.parent.gameObject);
     }
 

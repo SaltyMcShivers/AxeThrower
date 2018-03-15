@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AxeStickingScript : MonoBehaviour {
-    public Rigidbody axeRB;
-    public float minimumStickingSpeed;
-
-    public List<BladeScript> blades;
+    private Rigidbody axeRB;
+    private AudioSource source;
+    public List<AudioClip> defaultClips;
 
     private Vector3 lastSpeed;
     private Vector3 speedToWorkWith;
@@ -21,6 +20,7 @@ public class AxeStickingScript : MonoBehaviour {
     private void Start()
     {
         axeRB = GetComponent<Rigidbody>();
+        source = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -34,8 +34,6 @@ public class AxeStickingScript : MonoBehaviour {
     private float bladeAngleY;
     private Vector3 downwardProject;
     private float bladeAngleX;
-
-    public LineRenderer testLine;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -54,45 +52,29 @@ public class AxeStickingScript : MonoBehaviour {
             {
                 bladeVelocity = Vector3.Project(speedToWorkWith, -collision.contacts[0].normal);
                 
-                if (bladeVelocity.magnitude > minimumStickingSpeed)
+                if (bladeVelocity.magnitude > penetration.minimumSpeed)
                 {
                     StickToObject(collision.gameObject, collision.contacts[0]);
                 }
-                Debug.Log(collision.gameObject.name + " V: " + bladeVelocity.ToString());
-            }
-            Debug.Log(collision.gameObject.name + " X: " + bladeAngleX.ToString());
-        }
-        if(testLine != null)
-        {
-            testLine.SetPosition(0, transform.position + sidewaysProject - collisionOffset);
-            testLine.SetPosition(1, transform.position);
-            testLine.SetPosition(2, transform.position + transform.up);
-        }
-        Debug.Log(collision.gameObject.name + " Y: " + bladeAngleY.ToString());
-        /*foreach (BladeScript blade in blades)
-        {
-            if (blade.CollidingWithObject(collision.gameObject, collision.contacts[0]))
-            {
-                bladeVelocity = Vector3.Project(speedToWorkWith, -collision.contacts[0].normal);
-
-                //Debug.Log(axeRB.velocity.ToString() + " " + collision.contacts[0].normal.ToString() + " " + bladeVelocity.ToString());
-                if (bladeVelocity.magnitude > minimumStickingSpeed)
-                {
-                    StickToObject(collision.gameObject);
-                    return;
-                }
             }
         }
-        */
     }
 
     private void StickToObject(GameObject newParent, ContactPoint point)
     {
-        
         axeRB.isKinematic = true;
         axeRB.useGravity = false;
         scoreScript = newParent.GetComponent<ScoringScript>();
         axeRB.detectCollisions = false;
+        source.Stop();
+        if (penetration.clips.Count > 0) {
+            source.clip = penetration.clips[Mathf.FloorToInt(Random.Range(0, penetration.clips.Count))];
+        }
+        else
+        {
+            source.clip = defaultClips[Mathf.FloorToInt(Random.Range(0, defaultClips.Count))];
+        }
+        source.Play();
         if (newParent.transform.localScale != Vector3.one)
         {
             axeRB.transform.SetParent(newParent.transform.parent);

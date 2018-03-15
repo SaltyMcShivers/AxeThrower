@@ -14,6 +14,8 @@ public class TeleporterScript : MonoBehaviour {
 
     public Color invalidColor;
     public Color validColor;
+    
+    public List<GameObject> helperDisplays;
 
     private TeleLocationScript destination;
 
@@ -81,8 +83,13 @@ public class TeleporterScript : MonoBehaviour {
                 {
                     destination.HideDisplay();
                     player.transform.position = destination.GetLocation();
+                    if (helperDisplays[0].activeSelf)
+                    {
+                        foreach(GameObject helper in helperDisplays) helper.SetActive(false);
+                    }
                 }
                 laser.gameObject.SetActive(false);
+                destination = null;
                 //teleLocator.SetActive(false);
             }
         }

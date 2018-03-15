@@ -4,4 +4,6 @@ using UnityEngine;
 
 public class AxePenetrationScript : MonoBehaviour {
     public float minimumSpeed;
+
+    public List<AudioClip> clips;
 }

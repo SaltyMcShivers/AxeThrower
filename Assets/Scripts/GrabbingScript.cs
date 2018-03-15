@@ -8,6 +8,7 @@ public class GrabbingScript : MonoBehaviour {
     private GameObject heldObject;
     private Rigidbody heldRB;
     private AxePhysicsScript axe;
+    private AudioSource source;
 
     public GameObject model;
     public float throwFactor = 2;
@@ -17,6 +18,7 @@ public class GrabbingScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         trackedOBJ = GetComponent<SteamVR_TrackedObject>();
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -77,6 +79,7 @@ public class GrabbingScript : MonoBehaviour {
         heldRB.isKinematic = true;
         heldRB.useGravity = false;
         heldRB.detectCollisions = true;
+        source.Play();
         model.SetActive(false);
     }
 

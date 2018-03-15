@@ -33,7 +33,6 @@ public class BladeScript : MonoBehaviour {
         if (hitObjects.Contains(go))
         {
             hitAngle = Vector3.Angle(point.normal, transform.parent.position - transform.position);
-            Debug.Log(gameObject.name + " to " + go.name + " " + hitAngle.ToString());
             return hitAngle < angleTolerance || hitAngle > 180f - angleTolerance;
         }
         return false;

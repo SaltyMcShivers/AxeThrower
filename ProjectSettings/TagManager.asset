@@ -22,7 +22,7 @@ TagManager:
   - ScoringLayer
   - TeleportLayer
   - OneAxeLayer
-  - 
+  - LightIgnoreLayer
   - 
   - 
   - 

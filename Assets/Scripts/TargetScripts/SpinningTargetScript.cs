@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpinningTargetScript : TargetScoringScript
 {
-    
+
     public Animator anim;
 
     private bool keepSpinning;
@@ -13,11 +13,12 @@ public class SpinningTargetScript : TargetScoringScript
     public GameObject bonusDisplay;
     public float displayTime = 3f;
 
-    private void Start()
+    protected override void Start()
     {
         isSpinning = false;
         keepSpinning = false;
         bonusDisplay.SetActive(false);
+        base.Start();
     }
 
     private IEnumerator SpinCoroutine(float spinTime)

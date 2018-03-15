@@ -8,6 +8,10 @@ public class OneThrowGame : GameManagerScript
     public float spinTime;
 
     public int timeBeforeCheck;
+    public AudioSource source;
+
+    public BonusDisplay display;
+    private SpinningTargetScript lastHit;
 
     private List<GameObject> axeTracker;
     private List<SpinningTargetScript> hitTargets;
@@ -37,9 +41,9 @@ public class OneThrowGame : GameManagerScript
             holder.ResetAxe();
             holder.gameObject.SetActive(false);
         }
+        source.Play();
     }
 
-    private SpinningTargetScript lastHit;
 
     public override void ScorePoints(GameObject axe, int points, TargetScoringScript target)
     {
@@ -63,7 +67,7 @@ public class OneThrowGame : GameManagerScript
         }
         scoreKeeper.AddToScore(1);
 
-        if(hitTargets.Count == targets.Count)
+        if(hitTargets.Count == targets.Count) 
         {
             StartCoroutine(EarlyVictoryDelay());
         }
@@ -71,14 +75,22 @@ public class OneThrowGame : GameManagerScript
 
     public override void EndGame()
     {
-        scoreKeeper.AddToScore(axeTracker.Count);
+        if(axeTracker.Count > 0)
+        {
+            scoreKeeper.AddToScore(axeTracker.Count);
+            display.TriggerAnim("+" + axeTracker.Count.ToString());
+        }
+        source.Play();
         base.EndGame();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         StopAllCoroutines();
-        if (!axeTracker.Contains(other.gameObject)) axeTracker.Add(other.gameObject);
+        if (!axeTracker.Contains(other.gameObject))
+        {
+            axeTracker.Add(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -99,7 +111,7 @@ public class OneThrowGame : GameManagerScript
 
     IEnumerator EarlyVictoryDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(timeBeforeCheck);
         EndGame();
     }
 }
